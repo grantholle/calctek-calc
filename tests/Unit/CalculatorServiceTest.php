@@ -20,6 +20,7 @@ test('can calculate expected results from given expression', function (string $e
     'mixed operations' => ['2 + 3 * 4', 14.0],
     'it rounds float results down' => ['7 / 3', 2.3333333333],
     'it rounds float results up' => ['10 / 6', 1.6666666667],
+    'it can handle decimal numbers' => ['5.5 + 2.8', 8.3],
     'operations with parentheses' => ['(2 + 3) * 4', 20.0],
     'mixed operations with parentheses' => ['(2 + 3) * (4 - 1)', 15.0],
     'nested parentheses' => ['((2 + 3) * (4 - 1)) / 5', 3.0],
