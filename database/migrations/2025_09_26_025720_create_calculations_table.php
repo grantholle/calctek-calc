@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('calculations', function (Blueprint $table) {
             $table->id();
-            $table->string('expression');
+            $table->text('expression');
             $table->float('answer');
             $table->timestamps();
         });
