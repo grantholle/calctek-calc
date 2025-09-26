@@ -38,3 +38,15 @@ it('can delete a calculation', function () {
 
     $this->assertModelMissing($calculation);
 });
+
+it('can delete all calculations', function () {
+    Calculation::factory()->count(5)->create();
+
+    $this->assertDatabaseCount('calculations', 5);
+
+    $this->delete(route('calculations.delete-all'))
+        ->assertRedirect()
+        ->assertSessionHas('success', 'Calculation history cleared.');
+
+    $this->assertDatabaseCount('calculations', 0);
+});
