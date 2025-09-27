@@ -21,6 +21,7 @@ class CalculationResource extends JsonResource
             'id' => $this->id,
             'expression' => $this->expression,
             'answer' => $this->answer,
+            'answer_formatted' => $this->answer_formatted,
         ];
     }
 }

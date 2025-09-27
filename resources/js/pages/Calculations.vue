@@ -13,7 +13,7 @@
             </p>
           </div>
           <Link :href="`/?calculation=${calc.id}`" class="p-2 text-2xl">
-            {{ calc.answer }}
+            {{ calc.answer_formatted }}
           </Link>
         </li>
       </ul>

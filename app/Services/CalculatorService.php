@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use App\Models\Calculation;
+
 class CalculatorService
 {
     protected int $index = 0;
@@ -24,7 +26,7 @@ class CalculatorService
         $result = $this->tokenize()
             ->parseAdditionSubtraction();
 
-        return round($result, 10);
+        return round($result, Calculation::$DECIMALS);
     }
 
     public function validationMessage(): ?string
