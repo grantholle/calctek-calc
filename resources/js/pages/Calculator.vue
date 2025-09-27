@@ -2,7 +2,7 @@
   <div class="flex min-h-screen flex-col">
     <div class="flex h-[25vh] flex-col justify-end text-right sm:h-auto">
       <p :class="['p-[.5vmax] text-[2vmax]', form.errors.expression ? 'text-red-500' : 'text-white']">
-        &nbsp;{{ form.errors.expression }} <button @click.prevent="form.expression = lastAnswer" class="cursor-pointer">{{ lastAnswer }}</button>
+        &nbsp;{{ form.errors.expression }} <button v-if="!form.errors.expression" @click.prevent="form.expression = lastAnswer" class="cursor-pointer">{{ lastAnswer }}</button>
       </p>
       <input v-model="form.expression" type="text" class="w-full border-b border-white p-[.5vmax] text-right text-[4vmax] focus:outline-0" />
     </div>
