@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\CalculationResource;
 use App\Models\Calculation;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
 class CalculatorController extends Controller
 {

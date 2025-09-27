@@ -7,7 +7,9 @@ use App\Models\Calculation;
 class CalculatorService
 {
     protected int $index = 0;
+
     protected string $expression;
+
     protected array $tokens = [];
 
     public function __construct(string $expression)
@@ -57,7 +59,7 @@ class CalculatorService
                 $stack[] = $i + 1;
             } elseif ($char === ')') {
                 if (empty($stack)) {
-                    return "Unmatched closing parenthesis at position " . ($i + 1);
+                    return 'Unmatched closing parenthesis at position '.($i + 1);
                 }
 
                 array_pop($stack);
@@ -66,6 +68,7 @@ class CalculatorService
 
         if (! empty($stack)) {
             $pos = array_pop($stack);
+
             return "Unmatched opening parenthesis at position {$pos}";
         }
 
@@ -155,6 +158,7 @@ class CalculatorService
 
             // Skip the closing parenthesis
             $this->index++;
+
             return $result;
         }
 
@@ -163,6 +167,6 @@ class CalculatorService
             return -$this->parseFactor();
         }
 
-        throw new \InvalidArgumentException('Unexpected token: ' . $token);
+        throw new \InvalidArgumentException('Unexpected token: '.$token);
     }
 }

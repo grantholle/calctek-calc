@@ -32,7 +32,7 @@ class StoreCalculationRequest extends FormRequest
                     if ($message = $calculator->validationMessage()) {
                         $fail($message);
                     }
-                }
+                },
             ],
         ];
     }

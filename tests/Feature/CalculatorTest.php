@@ -49,7 +49,7 @@ it('can validate invalid expressions', function (string $expression) {
     '',
     '2 ** 3',
     '(2 + 3',
-    '2 * 3)'
+    '2 * 3)',
 ]);
 
 it('can delete a calculation', function () {
