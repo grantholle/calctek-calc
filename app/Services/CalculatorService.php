@@ -151,10 +151,6 @@ class CalculatorService
         if ($token === '(') {
             $result = $this->parseAdditionSubtraction();
 
-            if ($this->index >= count($this->tokens) || $this->tokens[$this->index] !== ')') {
-                throw new \InvalidArgumentException('Missing closing parenthesis');
-            }
-
             // Skip the closing parenthesis
             $this->index++;
             return $result;
