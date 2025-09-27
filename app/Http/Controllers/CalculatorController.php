@@ -18,6 +18,9 @@ class CalculatorController extends Controller
             'lastAnswer' => fn () => Calculation::query()
                 ->latest()
                 ->value('answer'),
+            'currentValue' => fn () => $request->filled('calculation')
+                ? Calculation::find($request->input('calculation'))?->answer
+                : null,
         ]);
     }
 }

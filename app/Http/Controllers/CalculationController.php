@@ -3,11 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCalculationRequest;
+use App\Http\Resources\CalculationResource;
 use App\Models\Calculation;
 use App\Services\CalculatorService;
+use Inertia\Inertia;
 
 class CalculationController extends Controller
 {
+    public function index()
+    {
+        return inertia('Calculations', [
+            'calculations' => Inertia::scroll(fn () => CalculationResource::collection(
+                Calculation::query()
+                    ->latest()
+                    ->paginate(15)
+            )),
+        ]);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
