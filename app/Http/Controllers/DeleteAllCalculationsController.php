@@ -15,6 +15,6 @@ class DeleteAllCalculationsController extends Controller
 
         session()->flash('success', 'Calculation history cleared.');
 
-        return back();
+        return to_route('calculator');
     }
 }
