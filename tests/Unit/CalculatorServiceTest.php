@@ -28,4 +28,6 @@ test('can calculate expected results from given expression', function (string $e
     'fails on invalid characters' => ['2 + a', 'Invalid characters in expression'],
     'fails on unmatched parentheses' => ['(2 + 3', 'Unmatched opening parenthesis at position 1'],
     'fails on unmatched closing parentheses' => ['2 + 3)', 'Unmatched closing parenthesis at position 4'],
+    'fails on unexpected token' => ['2 ++ 3', 'Unexpected token: +'],
+    'fails on division by zero' => ['5 / 0', 'Division by zero'],
 ]);
